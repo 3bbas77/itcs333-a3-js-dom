@@ -112,8 +112,6 @@ if (filterAll) {
       applyFilter();
     });
   }
-
-  // Initial counter call on load
   updateCounter();
   });
 
