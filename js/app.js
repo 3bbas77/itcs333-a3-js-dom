@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateCounter() {
     const left = todoList.querySelectorAll('li:not(.completed)').length;
-      counter.textContent = `${left} item left`; 
+      counter.textContent = `${left} items left`; 
   }
 
   function applyFilter() {
