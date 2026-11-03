@@ -7,20 +7,22 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const todoList = document.getElementById('todo-list'); 
-  const addButton = document.getElementById('add-btn');
   const todoInput = document.getElementById('todo-input');
   const errorMsg = document.getElementById('error-msg'); 
   const counter = document.getElementById('counter');     
   const filterAll = document.getElementById('filter-all');
   const filterActive = document.getElementById('filter-active');
   const filterDone = document.getElementById('filter-done');
+  const todoForm = document.getElementById('todo-form');
+
+  if (todoList === null || todoInput === null || errorMsg === null || counter === null || filterAll === null || filterActive === null || filterDone === null || todoForm === null) return;
 
 
   let currentFilter = 'all';
 
   function updateCounter() {
     const left = todoList.querySelectorAll('li:not(.completed)').length;
-      counter.textContent = `${left} items left`; 
+    counter.textContent = `${left} items left`; 
   }
 
   function applyFilter() {
@@ -35,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-addButton.addEventListener('click', (e) => {
+todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const text = todoInput.value.trim();
   if(text === '') {
